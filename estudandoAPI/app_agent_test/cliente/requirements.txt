@@ -1,0 +1,8 @@
+pystray
+cffi
+Pillow
+pip
+Jinja2
+pywin32
+six
+setuptools

@@ -1,0 +1,75 @@
+2022-08-17 13:06:40.022 | CRITICAL | __main__:<module>:18 - senha
+2022-08-17 13:06:40.022 | DEBUG    | __main__:<module>:19 - Debug
+2022-08-17 13:06:40.022 | INFO     | __main__:<module>:20 - Info
+2022-08-17 13:06:40.031 | WARNING  | __main__:<module>:21 - Warning
+2022-08-17 13:08:19.828 | CRITICAL | __main__:<module>:18 - senha
+2022-08-17 13:08:19.832 | DEBUG    | __main__:<module>:19 - Debug
+2022-08-17 13:08:19.835 | INFO     | __main__:<module>:20 - Info
+2022-08-17 13:08:19.840 | WARNING  | __main__:<module>:21 - Warning
+2022-08-17 13:12:55.186 | CRITICAL | __main__:<module>:17 - senha
+2022-08-17 13:12:55.186 | DEBUG    | __main__:<module>:18 - Debug
+2022-08-17 13:12:55.187 | INFO     | __main__:<module>:19 - Info
+2022-08-17 13:12:55.189 | WARNING  | __main__:<module>:20 - Warning
+2022-08-17 13:13:25.143 | CRITICAL | __main__:<module>:17 - senha
+2022-08-17 13:13:25.147 | DEBUG    | __main__:<module>:18 - Debug
+2022-08-17 13:13:25.150 | INFO     | __main__:<module>:19 - Info
+2022-08-17 13:13:25.153 | WARNING  | __main__:<module>:20 - Warning
+2022-08-17 13:13:42.071 | CRITICAL | __main__:<module>:17 - senha
+2022-08-17 13:13:42.073 | DEBUG    | __main__:<module>:18 - Debug
+2022-08-17 13:13:42.076 | INFO     | __main__:<module>:19 - Info
+2022-08-17 13:13:42.078 | WARNING  | __main__:<module>:20 - Warning
+2022-08-17 13:18:37.540 | CRITICAL | __main__:<module>:18 - senha
+2022-08-17 13:18:37.540 | INFO     | __main__:<module>:20 - Info
+2022-08-17 13:18:37.541 | WARNING  | __main__:<module>:21 - Warning
+2022-08-17 14:06:48.745 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-17 14:06:48.745 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-17 14:08:11.178 | INFO     | app_server:accept_wrapper:18 - Accepted connection from client
+2022-08-17 14:08:11.182 | INFO     | libserver:process_request:217 - Received request {self.request!r} from {self.addr}
+2022-08-17 14:08:11.185 | INFO     | libserver:_create_response_json_content:114 - creating msg to cliente action: test
+2022-08-17 14:08:11.188 | INFO     | libserver:_write:60 - Sending msg to client
+2022-08-17 14:08:11.190 | INFO     | libserver:_write:70 - closing the Connection to the client
+2022-08-17 14:08:22.848 | INFO     | app_server:accept_wrapper:18 - Accepted connection from client
+2022-08-17 14:08:22.851 | INFO     | libserver:process_request:217 - Received request {self.request!r} from {self.addr}
+2022-08-17 14:08:22.853 | INFO     | libserver:_create_response_json_content:114 - creating msg to cliente action: test
+2022-08-17 14:08:22.856 | INFO     | libserver:_write:60 - Sending msg to client
+2022-08-17 14:08:22.858 | INFO     | libserver:_write:70 - closing the Connection to the client
+2022-08-18 12:55:09.147 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 12:55:09.147 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 12:55:34.607 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 12:57:23.726 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 12:57:46.210 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 12:57:46.210 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 12:57:51.844 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 12:58:59.250 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 12:58:59.250 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 12:59:04.478 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 13:05:19.067 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:05:19.067 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:07:09.191 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:07:09.191 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:08:40.071 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:08:40.072 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:09:40.059 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:09:40.060 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:09:43.073 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 13:09:53.107 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 13:25:55.759 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:25:55.759 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:26:00.068 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 13:49:43.365 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:49:43.365 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:49:47.623 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 13:50:09.844 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 13:50:09.844 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 13:50:13.904 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 14:14:47.389 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 14:14:47.389 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 14:14:47.569 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 14:18:17.323 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 14:18:17.324 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 14:18:19.830 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 14:27:10.156 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 14:27:10.156 | INFO     | __main__:<module>:38 - run fastapi server
+2022-08-18 14:27:13.428 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-08-18 14:28:42.152 | INFO     | __main__:socket_server:27 - run socket server
+2022-08-18 14:28:42.152 | INFO     | __main__:<module>:38 - run fastapi server
