@@ -1,25 +1,22 @@
 import time
 import threading
 import loger
-from codigo import app_client, executionrow
+from codigo import app_client, executionrow,interface
 
 
 def sistray():
     loger.logger.info("forming the systray")
-    from codigo import interface
+    interface.interface()
+
 
 def socket_test():
-    loger.logger.info("sending request to server")
-    app_client.run_client("test", "morpheus")
+    while True:
+        loger.logger.debug("doing the loop")
+        loger.logger.info("sending request to server")
+        app_client.run_client("config")
+        executionrow.do_all()
+        time.sleep(100)
 
-threading.Thread(target=sistray).start()
+threading.Thread(target=socket_test).start()
+sistray()
 
-loger.logger.debug("begining the loop")
-
-while True:
-    loger.logger.debug("doing the loop") 
-    #threading.Thread(target=socket_test).start()
-    
-    app_client.run_client("test", "morpheus")
-    executionrow.do_all()
-    time.sleep(10)

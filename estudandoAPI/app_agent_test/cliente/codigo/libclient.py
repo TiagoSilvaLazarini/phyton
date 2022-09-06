@@ -50,18 +50,20 @@ class Message:
             print(f"Sending {self._send_buffer!r} to {self.addr}")
             try:
                 # Should be ready to write
-                loger.logger.info("tried send1")
+                loger.logger.debug("tried send the message to the server")
+                executionrow.estado_con(estado=False)
                 sent = self.sock.send(self._send_buffer)
-                loger.logger.info("tried send4")
+                loger.logger.debug("send the message to the server")
+                executionrow.estado_con(estado=True)
             except BlockingIOError:
                 # Resource temporarily unavailable (errno EWOULDBLOCK)
-                loger.logger.info("tried send3")
+                loger.logger.error("BlockingIOError")
                 pass
-            except OSError as e:
-                loger.logger.info("tried send5")
-                print(e)
+            #except OSError as e:
+            #    loger.logger.debug("tried send5")
+            #    print(e)
+                
             else:
-                loger.logger.info("tried send2")
                 self._send_buffer = self._send_buffer[sent:]
 
     def _json_encode(self, obj, encoding):
@@ -91,9 +93,13 @@ class Message:
 
     def _process_response_json_content(self):
         content = self.response
-        result = content.get("result")
-        print(f"Got result: {result}")
-        executionrow.save_data(content)
+        action = content.get("action")
+        if action == "config":
+            executionrow.save_data(content)
+        elif action == "search":
+            executionrow.save_data(content)
+        else:
+            print(f"Got result: {content}")
 
     def _process_response_binary_content(self):
         content = self.response

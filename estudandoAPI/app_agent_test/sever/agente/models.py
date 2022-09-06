@@ -70,6 +70,20 @@ class CMD(Base):
     __tablename__ = 'cmds'
 
     id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
     comando = Column(String)
+
+    cmd_order = relationship('CMD_order', back_populates="cmd")
+
+class CMD_order(Base):
+    __tablename__ = 'cmds_order'
+
+    id = Column(Integer, primary_key=True, index=True)
+    id_cmd = Column(Integer, ForeignKey("cmds.id"))
+    name = Column(String)
+    comando = Column(String)
+    type = Column(String)
+
+    cmd = relationship('CMD', back_populates="cmd_order")
         
     

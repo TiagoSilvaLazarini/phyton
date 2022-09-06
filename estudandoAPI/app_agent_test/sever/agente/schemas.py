@@ -39,8 +39,19 @@ class Zona(ZonaBase):
 
 class CMDBase(BaseModel):
     comando: str
+    name:str
 
 class CMD(CMDBase):
+    class Config():
+        orm_mode = True
+
+class CMDBase_order(BaseModel):
+    id_cmd:int
+    comando: str
+    name:str
+    type:str
+
+class CMD_order(CMDBase_order):
     class Config():
         orm_mode = True
 
@@ -92,7 +103,18 @@ class ShowEmprestimo(BaseModel):
 
 class ShowCMD(BaseModel):
     id:int
+    name:str
     comando: str
+
+    class Config():
+        orm_mode = True
+
+class ShowCMD_order(BaseModel):
+    id:int
+    name:str
+    comando: str
+    type:str
+    cmd:ShowCMD
 
     class Config():
         orm_mode = True

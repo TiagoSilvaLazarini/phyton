@@ -1,4 +1,4 @@
-import json
+
 from cryptography.fernet import Fernet
 
 def save_key(key):

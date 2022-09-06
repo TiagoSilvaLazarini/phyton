@@ -21,7 +21,7 @@
         <p>- Subprocess</p>
         <p>- Tkinter</p>
         <h3>FRAMEWORKS</h3>
-        <p>- Flask</p>
+        <p>- FastAPI</p>
         <hr>
         <div align="center">
             <h3>ARQUITETURA DE SISTEMA<h3>

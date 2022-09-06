@@ -1,9 +1,10 @@
 import os
+from time import sleep
 from tkinter import *
 
 import PIL
 from PIL import Image, ImageTk
-from codigo import executionrow
+from codigo import executionrow, app_client
 from pystray import MenuItem as item
 import pystray
 app = Tk()
@@ -91,7 +92,7 @@ class interface:
         app.protocol("WM_DELETE_WINDOW", interface.hide_window)
 
         app.mainloop()
-        
+        interface.hide_window()
 
     # Função para sair da janela
     def quit_window(icon, item):
@@ -107,6 +108,12 @@ class interface:
     def reload_window(icon, item):
         interface.quit_window
 
+    def execute_window():
+        app_client.run_client("search")
+    
+    def execute_cmd():
+        executionrow.do_the_cmd()
+
     def open_log():
         executionrow.commandspowershell("notepad.exe ./cliente/loguru.txt")
 
@@ -118,9 +125,8 @@ class interface:
         menu = (item("Fechar", interface.quit_window), 
         item("Abrir", interface.show_window),
         item("reload", interface.reload_window),
+        item("execute", interface.execute_window),
+        item("execute_cmd", interface.execute_cmd),
         item("log", interface.open_log))
         icon = pystray.Icon("name", image, "Agente Sesop", menu)
         icon.run()
-
-        
-interface()

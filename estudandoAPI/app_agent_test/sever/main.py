@@ -1,11 +1,10 @@
-from imp import reload
 from fastapi import FastAPI
 import uvicorn
 import app_server
 import threading
 from agente import  models
 from agente.database import engine
-from agente.routers import computador, authentication, emprestimo, impressora, user, zona, cmd
+from agente.routers import computador, authentication, emprestimo, impressora, user, zona, cmd,cmd_order
 import loger
 import time
 app = FastAPI()
@@ -22,6 +21,7 @@ app.include_router(impressora.router)
 app.include_router(zona.router)
 app.include_router(emprestimo.router)
 app.include_router(cmd.router)
+app.include_router(cmd_order.router)
 
 
 def socket_server():

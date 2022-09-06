@@ -73,3 +73,25 @@
 2022-08-18 14:27:13.428 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
 2022-08-18 14:28:42.152 | INFO     | __main__:socket_server:27 - run socket server
 2022-08-18 14:28:42.152 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 15:49:09.605 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 15:49:09.606 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 15:50:34.861 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 15:50:34.861 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 15:53:08.229 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 15:53:08.230 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 15:59:00.380 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-09-06 16:02:47.100 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-09-06 16:02:59.203 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 16:02:59.203 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 16:03:09.275 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-09-06 16:04:27.098 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 16:04:27.098 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 16:13:51.798 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-09-06 16:21:13.198 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 16:21:13.198 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 16:21:29.896 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-09-06 16:26:32.634 | ERROR    | app_server:run_server:51 - Main: Error: Exception for client message.process_events
+2022-09-06 16:56:09.569 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 16:56:09.569 | INFO     | __main__:<module>:38 - run fastapi server
+2022-09-06 17:12:04.859 | INFO     | __main__:socket_server:29 - run socket server
+2022-09-06 17:12:04.859 | INFO     | __main__:<module>:38 - run fastapi server

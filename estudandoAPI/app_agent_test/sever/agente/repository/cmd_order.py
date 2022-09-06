@@ -4,13 +4,13 @@ from fastapi import HTTPException, Response, status
 
 
 def get_all(db: Session):
-    CMDS = db.query(models.CMD).all()
+    CMDS = db.query(models.CMD_order).all()
     return CMDS
 
 
-def create(request: schemas.CMD, db: Session):
+def create(request: schemas.CMD_order, db: Session):
     #gravar os dados
-    new_cmd = models.CMD(name =request.name,comando=request.comando)
+    new_cmd = models.CMD_order(id_cmd = request.id_cmd,name = request.name ,comando=request.comando, type = request.type)
     #criar um novo
     db.add(new_cmd)
     db.commit()
@@ -20,7 +20,7 @@ def create(request: schemas.CMD, db: Session):
 
 def destroy(id: int, db: Session):
     #verifica se existe o dado
-    cmd = db.query(models.CMD).filter(models.CMD.id == id)
+    cmd = db.query(models.CMD_order).filter(models.CMD_order.id == id)
 
     if not cmd.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
@@ -31,13 +31,13 @@ def destroy(id: int, db: Session):
     return Response(status_code=status.HTTP_204_NO_CONTENT) 
 
 
-def update(id: int, request: schemas.CMD, db: Session):
+def update(id: int, request: schemas.CMD_order, db: Session):
     #pega os dados
-    cmd = db.query(models.CMD).filter(models.CMD.id == id)
+    cmd = db.query(models.CMD_order).filter(models.CMD_order.id == id)
 
     if not cmd.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"CMD with id {id} not found")
+                            detail=f"CMD_order with id {id} not found")
     #altera os dados
     cmd.update(request.dict())
     db.commit()
@@ -47,8 +47,8 @@ def update(id: int, request: schemas.CMD, db: Session):
 
 def show(id: int, db: Session):
     #pega os dados
-    cmd = db.query(models.CMD).filter(models.CMD.id == id).first()
+    cmd = db.query(models.CMD_order).filter(models.CMD_order.id == id).first()
     if not cmd:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"CMD with the id {id} is not available")
+                            detail=f"CMD_order with the id {id} is not available")
     return cmd

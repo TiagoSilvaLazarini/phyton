@@ -4,7 +4,7 @@ import json
 import io
 import struct
 from datetime import datetime
-from agente import create_json
+from agente import create_json,socket_sql
 import loger
 
 request_search = {
@@ -96,19 +96,20 @@ class Message:
         message = message_hdr + jsonheader_bytes + content_bytes
         return message
 
+
+    #criar a resposta para o cliente
     def _create_response_json_content(self):
         action = self.request.get("action")
-        if action == "search":
-            query = self.request.get("value")
-            answer = request_search.get(query) or f"No match for '{query}'."
-            content = {"action":action,"result": answer}
-            loger.logger.debug("creating msg to cliente action: search")
-        elif action == "test":
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            print("Current Time =", current_time)
-            content = {"action":action,"result": current_time,"encrypt_key":"pT8ZDjwCvnWkfPEYBm12q2p9srNkM-nWC6Ss9aAcMEw=","list":[{"name":"renata","idade":23},{"name":"prisila","idade":21}],"comando": create_json.try_t()}
+        if action == "test":
+            content = {"action":action}
             loger.logger.debug("creating msg to cliente action: test")
+        elif action == "config":
+            content = create_json.get_json_return(self.request)
+            loger.logger.debug("creating msg to cliente action: config")
+        elif action == "search":
+            loger.logger.debug("creating msg to cliente action: seach")
+            socket_sql.save_data(self.request)
+            content={"action":action}
         else:
             content = {"result": f"Error: invalid action '{action}'."}
             loger.logger.error("invalid action from client")
@@ -210,11 +211,14 @@ class Message:
         if self.jsonheader["content-type"] == "text/json":
             encoding = self.jsonheader["content-encoding"]
             self.request = self._json_decode(data, encoding)
+            
             print(f"Received request {self.request!r} from {self.addr}")
             loger.logger.debug("Received request from client")
         else:
             # Binary or unknown content-type
             self.request = data
+            
+
             print(
                 f"Received {self.jsonheader['content-type']} "
                 f"request from {self.addr}"

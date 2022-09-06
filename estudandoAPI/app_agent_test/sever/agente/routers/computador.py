@@ -1,4 +1,3 @@
-from turtle import title
 from typing import List
 from fastapi import APIRouter, Depends, status, HTTPException
 from agente import schemas, database, models, oauth2

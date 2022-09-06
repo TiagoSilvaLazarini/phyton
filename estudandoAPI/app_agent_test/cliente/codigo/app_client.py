@@ -5,30 +5,33 @@ import socket
 import selectors
 import traceback
 import loger
-from codigo import libclient
+from codigo import libclient,executionrow
 
-def run_client(action,value):
+
+
+def run_client(action):
     sel = selectors.DefaultSelector()
-
-    def create_request(action, value):
+    #create the request -> actions
+    def create_request(action):
         loger.logger.info("creating the request")
-        if action == "search":
+        if action == "config":
             return dict(
                 type="text/json",
                 encoding="utf-8",
-                content=dict(action=action, value=value),
+                #msg 
+                content=dict(action=action),
             )
-        elif action == "test":
+        elif action == "search":
             return dict(
                 type="text/json",
                 encoding="utf-8",
-                content=dict(action=action, value=value),
+                content=dict(action=action, pc=executionrow.send_information()),
             )
         else:
             return dict(
                 type="binary/custom-client-binary-type",
                 encoding="binary",
-                content=bytes(action + value, encoding="utf-8"),
+                content=bytes(action, encoding="utf-8"),
             )
 
 
@@ -44,7 +47,7 @@ def run_client(action,value):
 
     host, port = "127.55.99.1", 65432
     #action, value = "search", "ring"
-    request = create_request(action, value)
+    request = create_request(action)
     start_connection(host, port, request)
 
     try:

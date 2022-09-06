@@ -1,5 +1,3 @@
-from turtle import title
-from unicodedata import name
 from sqlalchemy.orm import Session
 from agente import models, schemas
 from fastapi import HTTPException, Response, status
