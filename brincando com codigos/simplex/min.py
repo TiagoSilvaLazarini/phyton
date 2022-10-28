@@ -1,7 +1,6 @@
 from tabulate import tabulate
 from colorama import Fore
 
-
 class Simplex:
 
     def __init__(self):
@@ -112,7 +111,6 @@ class Simplex:
 
         return nova_linha_pivo
 
-
     def calcular_nova_linha(self, linha: list, coluna_pivo_index: int, linha_pivo: list) -> list:
         pivo = linha[coluna_pivo_index] * -1
         result_linha = [value * pivo for value in linha_pivo]
@@ -124,7 +122,6 @@ class Simplex:
             nova_linha.append(valor_soma)
 
         return nova_linha
-
 
     def negativo(self)-> bool:
         negativo = []
@@ -152,7 +149,6 @@ class Simplex:
         print()
         print(f"\n")
 
-
     def mostrar(self):
         
         data = []
@@ -174,7 +170,6 @@ class Simplex:
         print(f"\n")
         print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
         
-
     def caucular(self):
         
         linha_pivo_index = self.get_linha_pivo_index()
@@ -199,7 +194,6 @@ class Simplex:
             index += 1
         self.mostrar()
 
-
     def resolver(self):
         self._order = self.edit_ord_a
         self.mostrar()
@@ -207,5 +201,9 @@ class Simplex:
         while self.negativo():
             self.caucular()
         for x in range(len(self.table)):
-            print(f"linha: {self._order_b[x]} valor: {round(self.table[x][-1],2)}{Fore.RESET}")
+            if(x == 0):
+                print(f"linha: {self._order_b[x]} valor: {(round(self.table[x][-1],2))*-1}{Fore.RESET}")
+            else:
+                print(f"linha: {self._order_b[x]} valor: {round(self.table[x][-1],2)}{Fore.RESET}")
+        
         

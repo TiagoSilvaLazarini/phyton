@@ -2,7 +2,6 @@ from colorama import Fore
 import max
 import min
 
-
 if __name__ == "__main__":
 
     _res = False
@@ -71,7 +70,6 @@ if __name__ == "__main__":
                             print(f"{Fore.RED}Ooops! esta entrada so aceita numeros){Fore.RESET}")
                 
                 simplex.resolver()
-
 
             case "s":
                 print(f"{Fore.YELLOW}----------Estamos eperando sua volta----------{Fore.RESET}")

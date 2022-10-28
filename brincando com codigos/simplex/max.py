@@ -107,7 +107,6 @@ class Simplex:
 
         return nova_linha_pivo
 
-
     def calcular_nova_linha(self, linha: list, coluna_pivo_index: int, linha_pivo: list) -> list:
         pivo = linha[coluna_pivo_index] * -1
         result_linha = [value * pivo for value in linha_pivo]
@@ -119,7 +118,6 @@ class Simplex:
             nova_linha.append(valor_soma)
 
         return nova_linha
-
 
     def negativo(self)-> bool:
         negativo = list(filter(lambda x: x < 0, self.table[0]))
@@ -143,7 +141,6 @@ class Simplex:
         print()
         print(f"\n")
 
-
     def mostrar(self):
         
         data = []
@@ -165,7 +162,6 @@ class Simplex:
         print(f"\n")
         print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
         
-
     def caucular(self):
         coluna_pivo_index = self.get_coluna_pivo_index()
         linha_pivo_index = self.get_linha_pivo_index(coluna_pivo_index)
