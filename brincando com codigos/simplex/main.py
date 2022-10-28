@@ -15,6 +15,7 @@ if __name__ == "__main__":
                 print(f"{Fore.RED}Sempre coloque um espaço emtre as variaveis ou numeros diferentes ex:(2+3-6-8) -> (2 3 -6 -8){Fore.RESET}")
                 simplex = min.Simplex()
                 variaveis = input(f"{Fore.BLUE}entre o nome das variaveis ex:{Fore.CYAN}(x X y z ...){Fore.BLUE}:{Fore.RESET} ")
+                _res = False
                 while _res == False:
                     try:
                         folga = int(input(f"{Fore.BLUE}numero de variaveis de folga ex:{Fore.CYAN}(serão 3 funções então 3){Fore.BLUE}:{Fore.RESET} "))
@@ -45,6 +46,7 @@ if __name__ == "__main__":
                 print(f"{Fore.RED}Sempre coloque um espaço emtre as variaveis ou numeros diferentes ex:(2+3-6-8) -> (2 3 -6 -8){Fore.RESET}")
                 simplex = max.Simplex()
                 variaveis = input(f"{Fore.BLUE}entre o nome das variaveis ex:{Fore.CYAN}(x X y z ...){Fore.BLUE}:{Fore.RESET} ")
+                _res = False
                 while _res == False:
                     try:
                         folga = int(input(f"{Fore.BLUE}numero de variaveis de folga ex:{Fore.CYAN}(serão 3 funções então 3){Fore.BLUE}:{Fore.RESET} "))
