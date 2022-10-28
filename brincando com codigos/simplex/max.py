@@ -120,7 +120,11 @@ class Simplex:
         return nova_linha
 
     def negativo(self)-> bool:
-        negativo = list(filter(lambda x: x < 0, self.table[0]))
+        negativo = []
+        for x in range(len(self.table[0])):
+            if self.table[0][x]<0:
+                negativo.append(1)
+
 
         return True if len(negativo)> 0 else False
 
@@ -169,8 +173,8 @@ class Simplex:
         linha_pivo = self.calcular_nova_linha_pivo(coluna_pivo_index, linha_pivo_index)
 
         for x in range(len(self.table)):
-            print(f"linha: {self._order_b[x]} valor: {self.table[x][-1]}{Fore.RESET}")
-        print(f"{Fore.BLUE}pivo na linha: {self._order_b[linha_pivo_index]} coluna: {self._order_a[coluna_pivo_index+1]} valor: {self.table[linha_pivo_index][coluna_pivo_index]}{Fore.RESET}")
+            print(f"linha: {self._order_b[x]} valor: {round(self.table[x][-1],2)}{Fore.RESET}")
+        print(f"{Fore.BLUE}pivo na linha: {self._order_b[linha_pivo_index]} coluna: {self._order_a[coluna_pivo_index+1]} valor: {round(self.table[linha_pivo_index][coluna_pivo_index],2)}{Fore.RESET}")
 
 
         self.table[linha_pivo_index] = linha_pivo
@@ -194,5 +198,5 @@ class Simplex:
         while self.negativo():
             self.caucular()
         for x in range(len(self.table)):
-            print(f"linha: {self._order_b[x]} valor: {self.table[x][-1]}{Fore.RESET}")
+            print(f"linha: {self._order_b[x]} valor: {round(self.table[x][-1],2)}{Fore.RESET}")
         
